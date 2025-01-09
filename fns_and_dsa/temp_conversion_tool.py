@@ -1,5 +1,7 @@
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Factor to convert Fahrenheit to Celsius
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Factor to convert Celsius to Fahrenheit
+# Define global conversion factors within a class
+class ConversionFactors:
+    FAHRENHEIT_TO_CELSIUS = 5 / 9
+    CELSIUS_TO_FAHRENHEIT = 9 / 5
 
 def convert_to_celsius(fahrenheit):
   """Converts a temperature from Fahrenheit to Celsius.
@@ -10,7 +12,7 @@ def convert_to_celsius(fahrenheit):
   Returns:
       The temperature converted to Celsius (float).
   """
-  return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
+  return (fahrenheit - 32) * ConversionFactors.FAHRENHEIT_TO_CELSIUS
 
 def convert_to_fahrenheit(celsius):
   """Converts a temperature from Celsius to Fahrenheit.
@@ -21,7 +23,7 @@ def convert_to_fahrenheit(celsius):
   Returns:
       The temperature converted to Fahrenheit (float).
   """
-  return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+  return (celsius * ConversionFactors.CELSIUS_TO_FAHRENHEIT) + 32
 
 def main():
   while True:
