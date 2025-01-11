@@ -31,4 +31,7 @@ while True:
         break
 
     except ValueError as e:
-        print(f"Invalid input: {e}")
+        if "could not convert string to float" in str(e): # Check for specific error
+            print("Invalid temperature. Please enter a numeric value.")
+        else:
+            print(f"Invalid input: {e}") # Keep other error messages
