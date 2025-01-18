@@ -10,5 +10,5 @@ class SimpleCalculator:
 
     def division(self, a, b):
         if b == 0:
-            return None
+            raise ZeroDivisionError("Division by zero is not allowed")
         return a / b
