@@ -1,14 +1,11 @@
-class SimpleCalculator:
-    def addition(self, a, b):
-        return a + b
-
-    def subtraction(self, a, b):
-        return a - b
-
-    def multiplication(self, a, b):
-        return a * b
-
-    def division(self, a, b):
-        if b == 0:
-            raise ZeroDivisionError("Division by zero is not allowed")
-        return a / b
+def safe_divide(numerator, denominator):
+    try:
+        numerator = float(numerator)
+        denominator = float(denominator)
+        result = numerator / denominator
+        return f"The result of the division is {result}"
+    except ZeroDivisionError:
+       return "Error: Cannot divide by zero."
+    except ValueError:
+        return "Error: Please enter numeric values only."
+    
